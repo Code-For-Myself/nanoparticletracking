@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.optimize import curve_fit
 
 
 data1 = pd.read_csv("Gold_Shutter483_dur90-001-alltracks.csv")
@@ -33,6 +32,5 @@ for i in range(0, len(X1)):
 summe = summe / len(X1) * (166 * 10 ** (-9)) ** 2
 D = summe / (4 / 30)
 print("Diffusionskoeffizient in [m^2/s]\t" + str(D))
-fig , ax = plt.subplots(figsize=(6,4))
-ax.plot(np.array(data[" X1"]), np.array(data[" Y1"]), ".-")
+plt.plot(np.array(data[" X1"]), np.array(data[" Y1"]), ".-")
 plt.show()
